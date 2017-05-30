@@ -1,0 +1,15 @@
+version: '2'
+services:
+
+  dnscrypt:
+    build: ./dnscrypt-proxy/
+#    command: --resolver-name=d0wn-at-ns1 # Override default provider
+
+  dnsmasq:
+    build: ./dnsmasq/
+    ports:
+      - 53:53
+      - 53:53/udp
+#    volumes:
+#      - ./data/extra_hosts:/extra_hosts
+
